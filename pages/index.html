@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CryptoDash — Live Crypto Tracker</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/dashboard.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- header gets loaded by loader.js -->
+  <div id="header-placeholder"></div>
+
+  <main class="container">
+    <section class="search-section card">
+      <form id="search-form" class="search-form" autocomplete="off">
+        <input id="search-input" name="q" placeholder="Search coin name or id — e.g. bitcoin" />
+        <button type="submit">Search</button>
+      </form>
+      <div id="search-hint" class="hint">Try: bitcoin, ethereum, dogecoin</div>
+    </section>
+
+    <section class="grid">
+      <div class="left-column">
+        <div id="price-card" class="card">
+          <div class="price-header">
+            <img id="coin-image" alt="" width="36" height="36" />
+            <div>
+              <h2 id="coin-name">Search a coin</h2>
+              <div id="coin-symbol" class="muted"></div>
+            </div>
+            <div class="spacer"></div>
+            <div id="fav-btn-wrap">
+              <button id="fav-btn" class="btn" title="Add to favorites" style="display:none">★ Favorite</button>
+            </div>
+          </div>
+
+          <div class="price-body">
+            <div class="price-main">
+              <div id="coin-price" class="big-number">—</div>
+              <div id="coin-change" class="muted">—</div>
+            </div>
+
+            <div class="price-stats">
+              <div class="stat">
+                <label>Market Cap</label>
+                <div id="coin-marketcap">—</div>
+              </div>
+              <div class="stat">
+                <label>24h Volume</label>
+                <div id="coin-volume">—</div>
+              </div>
+              <div class="stat">
+                <label>Circulating Supply</label>
+                <div id="coin-supply">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="chart-card" class="card">
+          <h3>7-day Price Chart</h3>
+          <div class="chart-wrap">
+            <canvas id="price-chart" height="200"></canvas>
+          </div>
+        </div>
+
+        <div id="converter-card" class="card">
+          <h3>USD → INR</h3>
+          <div class="converter">
+            <input id="usd-input" type="number" placeholder="USD amount" />
+            <div>=</div>
+            <div id="inr-output" class="big-number">—</div>
+            <div class="muted small">Rate updates automatically</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right-column">
+        <div id="favorites-card" class="card">
+          <h4>Favorites</h4>
+          <ul id="favorites-list" class="list"></ul>
+          <div id="no-favs" class="muted">No favorites yet. Add a coin and click Favorite.</div>
+        </div>
+
+        <div id="gainers-card" class="card">
+          <h4>Top Gainers / Losers (24h)</h4>
+          <div id="gainers-list" class="list small"></div>
+        </div>
+
+        <div id="status-card" class="card small muted">
+          <div id="status-msg">Ready</div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Loading spinner -->
+  <div id="spinner" class="spinner hidden" aria-hidden="true">
+    <div class="dot"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/loader.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
