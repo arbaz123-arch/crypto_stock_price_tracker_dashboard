@@ -1,0 +1,20 @@
+.btn{ background:var(--accent); color:white; border:none; padding:8px 12px; border-radius:8px; box-shadow:none; transition: transform var(--transition); }
+.btn:hover{ transform: translateY(-2px); opacity:0.95; }
+
+.icon-btn{ background:transparent; border:1px solid rgba(0,0,0,0.05); padding:8px; border-radius:8px; }
+
+.price-header{ display:flex; align-items:center; gap:12px; }
+.price-body{ margin-top:12px; display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+
+.price-main{ display:flex; flex-direction:column; gap:6px; }
+.price-stats{ display:flex; gap:12px; flex-wrap:wrap; }
+.stat label{ font-size:0.8rem; color:var(--muted); }
+.stat div{ font-weight:600; }
+
+.chart-wrap{ position:relative; height:220px; }
+.converter{ display:flex; gap:12px; align-items:center; }
+.converter input{ padding:8px 10px; border-radius:8px; border:1px solid rgba(0,0,0,0.06); width:120px; }
+.small-card{ font-size:0.95rem; }
+.spinner{ position:fixed; right:18px; bottom:18px; width:48px; height:48px; display:flex; align-items:center; justify-content:center; z-index:60; }
+.spinner .dot{ width:20px; height:20px; border-radius:50%; animation: spin 1s linear infinite; background:var(--accent); }
+@keyframes spin{ 0%{ transform:scale(1) } 50%{ transform:scale(0.6) } 100%{ transform:scale(1) } }

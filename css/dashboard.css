@@ -1,0 +1,11 @@
+/* Dashboard-specific tweaks */
+#price-card .big-number{ font-size:2rem; color:var(--text); }
+#coin-change.positive{ color:var(--success); }
+#coin-change.negative{ color:var(--danger); }
+#favorites-list li{ justify-content:space-between; padding-right:6px; }
+.coin-thumb{ width:28px; height:28px; border-radius:6px; object-fit:cover; }
+#fav-btn{ background:transparent; border:1px dashed var(--accent); color:var(--accent); }
+#fav-btn.active{ background:var(--accent); color:white; border:none; }
+
+.status-ok{ color:var(--success); }
+.status-error{ color:var(--danger); }
