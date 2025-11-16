@@ -17,8 +17,8 @@
     }
   }
   // relative paths
-  await loadFragment('/components/header.html', '#header-placeholder');
-  await loadFragment('/components/footer.html', '#footer-placeholder');
+  await loadFragment('../components/header.html', '#header-placeholder');
+  await loadFragment('../components/footer.html', '#footer-placeholder');
 
   // connect header search to main search (if present)
   const headerForm = document.getElementById('header-search');

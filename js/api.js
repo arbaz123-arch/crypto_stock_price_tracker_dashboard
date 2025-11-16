@@ -32,7 +32,7 @@ const API = (function(){
 
   async function fetchUsdToInr(){
     // public exchange rate endpoint
-    const res = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=INR');
+    const res = await fetch('https://open.er-api.com/v6/latest/USD');
     if(!res.ok) throw new Error('Exchange rate fetch failed');
     const data = await res.json();
     return data && data.rates ? data.rates.INR : null;
